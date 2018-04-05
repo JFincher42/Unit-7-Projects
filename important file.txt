@@ -1,0 +1,16 @@
+This is a text file.
+Looks like any other
+But mine is special - it has haiku's, like:
+
+  Haiku's are easy
+    But sometimes they don't make sense
+  Refrigerator
+
+And limerick's, like:
+
+  There once was a writer named Jon
+  Who's limericks sounded all wrong
+    He ran out of time
+    And wrote just four lines
+    
+The end!  
