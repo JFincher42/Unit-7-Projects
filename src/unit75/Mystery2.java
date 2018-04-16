@@ -12,11 +12,11 @@ public class Mystery2 {
 	}
 
 	public static void main(String[] args) {
-		mystery2(113);  System.out.println();
-		mystery2(70);   System.out.println();
+//		mystery2(113);  System.out.println();
+//		mystery2(70);   System.out.println();
 		mystery2(42);   System.out.println();
-		mystery2(30);   System.out.println();
-		mystery2(10);   System.out.println();
+//		mystery2(30);   System.out.println();
+//		mystery2(10);   System.out.println();
 
 	}
 
