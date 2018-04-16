@@ -13,7 +13,8 @@ public class FileIO {
 		Scanner in = new Scanner(input);
 		PrintStream out = new PrintStream(output);
 		
-		
+		in.close();
+		out.close();
 	}
 
 }

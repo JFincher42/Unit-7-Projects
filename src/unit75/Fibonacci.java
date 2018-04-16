@@ -9,7 +9,8 @@ public class Fibonacci {
 	}
 
 	public static int fib(int n) {
-		
+		// TODO: Add iterative code here
+		return 0;		
 	}
 	
 	
@@ -17,14 +18,18 @@ public class Fibonacci {
 	
 	
 	
+
+
+
+
+
 	
 	
 	
 	
 	
 	public static int fibr(int n) {
-		if (n==1) return 1;
-		if (n==2) return 2;
+		if (n==1 || n==2) return 1;
 		return (fib(n-1) + fib(n-2));
 	}
 }

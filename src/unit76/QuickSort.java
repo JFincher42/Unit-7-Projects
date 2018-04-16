@@ -27,7 +27,7 @@ public class QuickSort{
     }
 
     /**
-     * partition - selects a partiiton pivot to split the array
+     * partition - selects a partiiton pivot to split the array, Lomuto scheme
      * @param arr  The array we are sorting
      * @param from The start of the array partition to sort
      * @param to   The end of the array partition to sort
@@ -40,7 +40,7 @@ public class QuickSort{
 
         // Loop through the entire partition
         for (int j = from; j < to-1; j++){
-            // If the current element is less than our pivot, 
+            // If the current element is less than our pivot, swap since we're out of order
             if (arr[j] < pivot){
                 i++;
                 temp = arr[i];
@@ -48,10 +48,43 @@ public class QuickSort{
                 arr[j] = temp;
             }
         }
+        // Move our pivot into the correct place and return that place.
         temp = arr[i+1];
         arr[i+1] = arr[to];
         arr[to] = temp;
         return i+1;
+    }
+
+    /**
+     * partition - selects a partiiton pivot to split the array, Hoare scheme
+     * @param arr  The array we are sorting
+     * @param from The start of the array partition to sort
+     * @param to   The end of the array partition to sort
+     * @return     The element representing the pivot element
+     */
+    public static int partition2(int[] arr, int from, int to){
+        int pivot = arr[from];                  // Pick a pivot point
+        int i = from;                           // Start at the ends of the section
+        int j = to;
+        int temp = 0;
+
+        // Keep going forever - we'll break at some point
+        while (true){
+            // Keep incrementing i until we're no longer less than our pivot
+            while (arr[i]<pivot) i++;
+
+            // Keep decrementing j until we're no longer greater than our pivot
+            while (arr[j]>pivot) j++;
+
+            // If we passed each other, we're done - return j as our pivot point
+            if (i>=j) return j;
+
+            // Else we swap, since we found these aren't in the right order
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+
+        }
     }
     
 }
