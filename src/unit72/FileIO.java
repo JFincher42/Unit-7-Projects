@@ -1,12 +1,11 @@
 package unit72;
 
-import java.io.FileReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintStream;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class FileIO {
 
@@ -18,11 +17,9 @@ public class FileIO {
 		PrintStream output = new PrintStream(f);
 		
 		while (input.hasNextLine()) {
-			String str = input.nextLine();
-			String[] words = str.split("i");
-			System.out.println(Arrays.toString(words));
-			// TODO: Magic happens!
-//			output.println(str);
+			String line = input.nextLine();
+			String[] tokens = line.split(" ");
+			output.println(line);
 		}
 		
 		input.close();

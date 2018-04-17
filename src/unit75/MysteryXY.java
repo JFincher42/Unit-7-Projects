@@ -13,10 +13,10 @@ public class MysteryXY {
 	}
 
 	public static void main(String[] args) {
-		mysteryXY(4, 1);
-		mysteryXY(4, 2);
-		mysteryXY(8, 2);
-		mysteryXY(4, 3);
+//		mysteryXY(4, 1);
+//		mysteryXY(4, 2);
+//		mysteryXY(8, 2);
+//		mysteryXY(4, 3);
 		mysteryXY(3, 4);
 	}
 
