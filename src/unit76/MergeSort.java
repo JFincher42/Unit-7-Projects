@@ -17,8 +17,8 @@ public class MergeSort {
   /**
    * mergeSortX - the recursive part of Merge Sort
    * @param arr  The array we are sorting
-   * @param from The left-most element of the array
-   * @param to   The right-most element of the array
+   * @param from The left-most element of the section to be sorted
+   * @param to   The right-most element of the section to be sorted
    * @param temp A temporary array to hold intermediate results
    * @return     Nothing
    */
@@ -39,49 +39,49 @@ public class MergeSort {
   /**
    * merge - merges two adjacent sections of an array
    * @param arr  The array we are merging
-   * @param from The left-most element of the left array
-   * @param mid  The mid-point between the two sections
-   * @param to   The right-most element of the right array
+   * @param from The left-most element of the sorted left section
+   * @param mid  The left-most element of the sorted right section
+   * @param to   The last element to be merged
    * @param temp A temporary array to hold the results
    * @return     Nothing
    */
   private static void merge(int[] arr, int from, int mid, int to, int[] temp)
   {
-    int i = from;               // The next element of the left section
-    int j = mid + 1;            // The next element of the right section
-    int k = from;               // Where to put the next lowest element in temp
+    int nextLeft = from;                // The next element of the left section
+    int nextRight = mid + 1;            // The next element of the right section
+    int nextMerge = from;               // Where to put the next lowest element in temp
 
     // If there are elements in both sections
-    while (i <= mid && j <= to) {
+    while (nextLeft <= mid && nextRight <= to) {
       // Find the lowest element, and copy it to temp
       // We can simplify this a bit
-      if (arr[i] < arr[j]) {      
-        temp[k] = arr[i];
-        i++;
+      if (arr[nextLeft] < arr[nextRight]) {      
+        temp[nextMerge] = arr[nextLeft];
+        nextLeft++;
       } else {
-        temp[k] = arr[j];
-        j++;
+        temp[nextMerge] = arr[nextRight];
+        nextRight++;
       }
-      k++;
+      nextMerge++;
     }
 
     // Does the left section have any elements remaining? Copy them over
-    while (i <= mid)  {
-      temp[k] = arr[i];
-      i++;
-      k++;
+    while (nextLeft <= mid)  {
+      temp[nextMerge] = arr[nextLeft];
+      nextLeft++;
+      nextMerge++;
     }
 
     // Does the right section have anay elements remaining? Copy them over
-    while (j <= to)  {
-      temp[k] = arr[j];
-      j++;
-      k++;
+    while (nextRight <= to)  {
+      temp[nextMerge] = arr[nextRight];
+      nextRight++;
+      nextMerge++;
     }
 
     // Now blast the whole thing back into the source array
-    for (k = from; k <= to; k++)  {
-      arr[k] = temp[k];
+    for (int mergedIndex = from; mergedIndex <= to; mergedIndex++)  {
+      arr[mergedIndex] = temp[mergedIndex];
     }
   }
 }
